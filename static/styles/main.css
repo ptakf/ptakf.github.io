@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+img {
+  pointer-events: none;
+}
+
+/* SIDEBAR */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9997;
+  width: 300px;
+  overflow-y: auto;
+  background-color: #181628;
+}
+
+/* Profile */
+header .profile > img {
+  display: block;
+  width: 33%;
+  margin: 20px auto;
+  border: 10px solid #2f293e;
+  border-radius: 100%;
+}
+
+header .profile > h1 {
+  text-align: center;
+}
+
+header .profile > h1 a {
+  color: #ffffff;
+}
+
+header .profile .social-links {
+  text-align: center;
+}
+
+header .profile .social-links img {
+  width: 18px;
+  background-color: #2f293e;
+  border: 8px solid #2f293e;
+  border-radius: 100%;
+}
+
+/* Navigation Menu */
+nav .nav-list {
+  margin-top: 36px;
+  list-style: none;
+}
+
+nav .nav-list li {
+  margin-bottom: 18px;
+}
+
+nav .nav-list a {
+  font-size: 18px;
+  color: #d4d4d4;
+}
+
+nav .nav-list a:hover {
+  color: #ffffff;
+}
+
+nav .nav-list a img {
+  width: 18px;
+  margin-right: 6px;
+  vertical-align: text-top;
+}
+
+/* MAIN */
+main {
+  margin-left: 300px;
+}
+
+@media screen and (max-width: 1199px) {
+  main {
+    margin-left: 0;
+  }
+}
+
+/* Hero */
+#hero {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  pointer-events: none;
+  background: url("../assets/images/bg-hero.jpg") top center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 1200px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+#hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background-color: rgba(15, 15, 15, 0.3);
+}
+
+#hero .hero-container {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  color: #ffffff;
+}
+
+#hero h1 {
+  margin-bottom: 10px;
+  font-size: 60px;
+}
+
+#hero h2 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+/* FOOTER */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  width: 300px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1199px) {
+  footer {
+    position: static;
+    width: 100%;
+    padding: 15px;
+    background-color: #181628;
+  }
+}
+
+/* PLACEHOLDER, REMOVE THIS LATER */
+@media screen and (max-width: 1199px) {
+  header {
+    width: 300px;
+    visibility: hidden;
+  }
+}
