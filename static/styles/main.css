@@ -149,6 +149,7 @@ header .profile .social-links a {
   margin-right: 6px;
   background-color: #2f293e;
   border-radius: 100%;
+  transition: 0.3s;
 }
 
 header .profile .social-links a img {
@@ -173,6 +174,7 @@ nav .nav-list li {
 nav .nav-list a {
   font-size: 18px;
   color: #d4d4d4;
+  transition: 0.3s;
 }
 
 nav .nav-list a:hover {
