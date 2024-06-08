@@ -21,7 +21,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
+  bottom: 50px;
   z-index: 9997;
   width: 300px;
   overflow-y: auto;
@@ -141,11 +141,23 @@ header .profile .social-links {
   text-align: center;
 }
 
-header .profile .social-links img {
+header .profile .social-links a {
+  display: inline-block;
   width: 18px;
+  height: 18px;
+  padding: 8px;
+  margin-right: 6px;
   background-color: #2f293e;
-  border: 8px solid #2f293e;
   border-radius: 100%;
+}
+
+header .profile .social-links a img {
+  width: 18px;
+}
+
+header .profile .social-links a:hover,
+header .profile .social-links a:active {
+  background-color: #605b9b;
 }
 
 /* Navigation Menu */
@@ -234,8 +246,10 @@ footer {
   bottom: 0;
   z-index: 9998;
   width: 300px;
+  height: 50px;
   text-align: center;
   color: #ffffff;
+  background-color: #181628;
 }
 
 @media screen and (max-width: 1199px) {
@@ -243,12 +257,6 @@ footer {
     left: -300px;
     transition: left 0.3s ease;
     width: 300px;
-  }
-
-  footer p {
-    margin: 0;
-    padding: 15px;
-    background-color: #181628;
   }
 
   #sidebar-menu-toggle:checked ~ footer {
