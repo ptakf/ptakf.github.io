@@ -1,6 +1,33 @@
-body {
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  padding: 0;
   margin: 0;
+}
+
+body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
 }
 
 a,
@@ -21,7 +48,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 50px;
+  bottom: 3em;
   z-index: 9997;
   width: 300px;
   overflow-y: auto;
@@ -44,25 +71,29 @@ header {
 @media screen and (max-width: 1199px) {
   .hamburger-menu-button {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 1.3em;
+    left: 1.3em;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0.3em;
     cursor: pointer;
+    background-color: #39364a;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
 
   .hamburger-menu-content,
   .hamburger-menu-content::before,
   .hamburger-menu-content::after {
     display: block;
-    width: 40px;
-    height: 3px;
-    background-color: #eeeeee;
+    width: 2.5em;
+    height: 0.2em;
     content: "";
+    background-color: #cfc7e2;
     transition: all 0.3s ease;
   }
 
@@ -83,21 +114,18 @@ header {
     + .hamburger-menu-button
     .hamburger-menu-content {
     transform: rotate(45deg);
-    background-color: #eeeeee;
   }
 
   .hamburger-menu-toggle:checked
     + .hamburger-menu-button
     .hamburger-menu-content::before {
     transform: rotate(-90deg);
-    background-color: #eeeeee;
   }
 
   .hamburger-menu-toggle:checked
     + .hamburger-menu-button
     .hamburger-menu-content::after {
     transform: rotate(-90deg);
-    background-color: #eeeeee;
   }
 }
 
@@ -124,12 +152,13 @@ header {
 header .profile > img {
   display: block;
   width: 33%;
-  margin: 20px auto;
-  border: 10px solid #2f293e;
+  margin: 1.3em auto;
+  border: 10px solid #39364a;
   border-radius: 100%;
 }
 
 header .profile > h1 {
+  font-size: 2.3em;
   text-align: center;
 }
 
@@ -143,36 +172,37 @@ header .profile .social-links {
 
 header .profile .social-links a {
   display: inline-block;
-  width: 18px;
-  height: 18px;
-  padding: 8px;
-  margin-right: 6px;
-  background-color: #2f293e;
+  width: 1em;
+  height: 1em;
+  padding: 0.5em;
+  margin-right: 0.4em;
+  background-color: #39364a;
   border-radius: 100%;
   transition: 0.3s;
 }
 
 header .profile .social-links a img {
-  width: 18px;
+  width: 1em;
 }
 
 header .profile .social-links a:hover,
 header .profile .social-links a:active {
-  background-color: #605b9b;
+  background-color: #6b677e;
 }
 
-/* Navigation Menu */
+/* Navigation */
 nav .nav-list {
-  margin-top: 36px;
+  padding-left: 2.5em;
+  margin-top: 2em;
   list-style: none;
 }
 
 nav .nav-list li {
-  margin-bottom: 18px;
+  margin-bottom: 1.5em;
 }
 
 nav .nav-list a {
-  font-size: 18px;
+  font-size: 1.4em;
   color: #d4d4d4;
   transition: 0.3s;
 }
@@ -182,8 +212,8 @@ nav .nav-list a:hover {
 }
 
 nav .nav-list a img {
-  width: 18px;
-  margin-right: 6px;
+  width: 1em;
+  margin-right: 0.4em;
   vertical-align: text-top;
 }
 
@@ -196,6 +226,10 @@ main {
   main {
     margin-left: 0;
   }
+}
+
+main .portfolio-section:nth-child(odd) {
+  background-color: #f3f7fd;
 }
 
 /* Hero */
@@ -232,14 +266,104 @@ main {
 }
 
 #hero h1 {
-  margin-bottom: 10px;
-  font-size: 60px;
+  margin-bottom: 0.25em;
+  font-size: 4em;
 }
 
 #hero h2 {
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: normal;
 }
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 2em 5%;
+}
+
+.portfolio-section h1 {
+  font-size: 2em;
+}
+
+.portfolio-section > h1::after {
+  display: block;
+  width: 2em;
+  height: 0.1em;
+  margin-top: 0.6em;
+  content: "";
+  background-color: #6b677e;
+}
+
+/* Portfolio Section - About Me */
+.portfolio-section#about p {
+  font-size: 1.2em;
+}
+
+/* Portfolio Section - Skills */
+.portfolio-section#skills .skill-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, 1fr);
+  list-style: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio-section#skills .skill-list {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-section#skills .skill-list li {
+  margin-bottom: 0.2em;
+}
+
+.portfolio-section#skills .skill-list li img {
+  width: 1em;
+  margin-right: 0.3em;
+  vertical-align: text-top;
+}
+
+/* Portfolio Section - Resume */
+.portfolio-section#resume h2 {
+  font-size: 1.6em;
+}
+
+.portfolio-section#resume p {
+  font-size: 1.2em;
+}
+
+.portfolio-section#resume .experience-list {
+  list-style: none;
+}
+
+.portfolio-section#resume .experience-list h3 {
+  margin-bottom: 0.8em;
+  font-size: 1.3em;
+}
+
+.portfolio-section#resume .experience-list .description-list {
+  margin-bottom: 1.6em;
+  list-style-position: inside;
+  list-style-type: initial;
+}
+
+.portfolio-section#resume .experience-list .description-list li {
+  margin-bottom: 0.2em;
+  font-size: 1.2rem;
+}
+
+.portfolio-section#resume .education-list {
+  list-style-position: inside;
+}
+
+.portfolio-section#resume .education-list li {
+  margin-bottom: 0.2em;
+  font-size: 1.2rem;
+}
+
+/* Portfolio Section - My Projects */
+
+/* Portfolio Section - Contact Me */
 
 /* FOOTER */
 footer {
@@ -248,7 +372,8 @@ footer {
   bottom: 0;
   z-index: 9998;
   width: 300px;
-  height: 50px;
+  height: 3em;
+  font-size: 1em;
   text-align: center;
   color: #ffffff;
   background-color: #181628;
