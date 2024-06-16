@@ -158,6 +158,7 @@ header .profile > img {
 }
 
 header .profile > h1 {
+  margin-bottom: 0.5em;
   font-size: 2.3em;
   text-align: center;
 }
@@ -167,6 +168,7 @@ header .profile > h1 a {
 }
 
 header .profile .social-links {
+  margin-bottom: 2em;
   text-align: center;
 }
 
@@ -193,12 +195,11 @@ header .profile .social-links a:active {
 /* Navigation */
 nav .nav-list {
   padding-left: 2.5em;
-  margin-top: 2em;
   list-style: none;
 }
 
 nav .nav-list li {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 nav .nav-list a {
@@ -266,22 +267,24 @@ main .portfolio-section:nth-child(odd) {
 }
 
 #hero h1 {
-  margin-bottom: 0.25em;
-  font-size: 4em;
+  margin-bottom: 0.3em;
+  font-size: 4.5em;
+  font-weight: bold;
 }
 
 #hero h2 {
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-weight: normal;
 }
 
 /* Portfolio Section */
 .portfolio-section {
-  padding: 2em 5%;
+  padding: 2.5em 5%;
 }
 
 .portfolio-section h1 {
   font-size: 2em;
+  margin-bottom: 0.6em;
 }
 
 .portfolio-section > h1::after {
@@ -315,6 +318,7 @@ main .portfolio-section:nth-child(odd) {
 
 .portfolio-section#skills .skill-list li {
   margin-bottom: 0.2em;
+  font-size: 1.2em;
 }
 
 .portfolio-section#skills .skill-list li img {
@@ -325,11 +329,16 @@ main .portfolio-section:nth-child(odd) {
 
 /* Portfolio Section - Resume */
 .portfolio-section#resume h2 {
+  margin-bottom: 0.8em;
   font-size: 1.6em;
 }
 
 .portfolio-section#resume p {
   font-size: 1.2em;
+}
+
+.portfolio-section#resume .no-experience-placeholder {
+  margin-bottom: 1.6em;
 }
 
 .portfolio-section#resume .experience-list {
@@ -341,10 +350,13 @@ main .portfolio-section:nth-child(odd) {
   font-size: 1.3em;
 }
 
-.portfolio-section#resume .experience-list .description-list {
+.portfolio-section#resume .experience-list li {
   margin-bottom: 1.6em;
+}
+
+.portfolio-section#resume .experience-list .description-list {
   list-style-position: inside;
-  list-style-type: initial;
+  list-style-type: disc;
 }
 
 .portfolio-section#resume .experience-list .description-list li {
@@ -354,6 +366,7 @@ main .portfolio-section:nth-child(odd) {
 
 .portfolio-section#resume .education-list {
   list-style-position: inside;
+  list-style-type: disc;
 }
 
 .portfolio-section#resume .education-list li {
@@ -371,10 +384,12 @@ footer {
   left: 0;
   bottom: 0;
   z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 300px;
   height: 3em;
   font-size: 1em;
-  text-align: center;
   color: #ffffff;
   background-color: #181628;
 }
