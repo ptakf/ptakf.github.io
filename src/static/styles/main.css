@@ -297,35 +297,47 @@ main .portfolio-section:nth-child(odd) {
   background-color: #6b677e;
 }
 
+.portfolio-section:last-child {
+  margin-bottom: 1.6em;
+}
+
 /* Portfolio Section - About Me */
 .portfolio-section#about p {
   font-size: 1.2em;
 }
 
 /* Portfolio Section - Skills */
-.portfolio-section#skills .skill-list {
+.portfolio-section#skills .container {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(3, 1fr);
-  list-style: none;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 1.6em;
 }
 
 @media screen and (max-width: 1199px) {
-  .portfolio-section#skills .skill-list {
-    grid-auto-flow: row;
-    grid-template-columns: 1fr;
+  .portfolio-section#skills .container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
-.portfolio-section#skills .skill-list li {
-  margin-bottom: 0.2em;
+.portfolio-section#skills .skill-category h2 {
+  margin-bottom: 0.8em;
+  font-size: 1.6em;
+}
+
+.portfolio-section#skills .skill-category ul {
+  list-style: none;
+}
+
+.portfolio-section#skills .skill-category li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4em;
   font-size: 1.2em;
 }
 
-.portfolio-section#skills .skill-list li img {
-  width: 1em;
+.portfolio-section#skills .skill-category li img {
+  width: 1.6em;
   margin-right: 0.3em;
-  vertical-align: text-top;
 }
 
 /* Portfolio Section - Resume */
@@ -383,6 +395,7 @@ main .portfolio-section:nth-child(odd) {
   flex-wrap: wrap;
   align-items: center;
   column-gap: 5em;
+  row-gap: 1.8em;
 }
 
 .portfolio-section#contact h2 {
@@ -391,7 +404,6 @@ main .portfolio-section:nth-child(odd) {
 }
 
 .portfolio-section#contact p {
-  margin-bottom: 1.8em;
   font-size: 1.2em;
   color: #6b677e;
 }
