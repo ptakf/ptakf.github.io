@@ -36,12 +36,16 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  pointer-events: none;
+}
+
 .fw-bold {
   font-weight: bold;
 }
 
-img {
-  pointer-events: none;
+.d-none {
+  display: none;
 }
 
 /* SIDEBAR */
@@ -297,10 +301,6 @@ main .portfolio-section:nth-child(odd) {
   background-color: #6b677e;
 }
 
-.portfolio-section:last-child {
-  margin-bottom: 1.6em;
-}
-
 /* Portfolio Section - About */
 .portfolio-section#about p {
   font-size: 1.2em;
@@ -390,29 +390,37 @@ main .portfolio-section:nth-child(odd) {
 /* Portfolio Section - Projects */
 
 /* Portfolio Section - Contact */
-.portfolio-section#contact .container {
+.portfolio-section#contact .no-javascript-notice {
+  margin-bottom: 1.6em;
+  font-size: 1.3em;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.portfolio-section#contact .content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 1.6em;
   column-gap: 5em;
   row-gap: 1.8em;
 }
 
-.portfolio-section#contact h2 {
+.portfolio-section#contact .content h2 {
   margin-bottom: 0.6em;
   font-size: 1.6em;
 }
 
-.portfolio-section#contact p {
+.portfolio-section#contact .content p {
   font-size: 1.2em;
   color: #6b677e;
 }
 
-.portfolio-section#contact a {
+.portfolio-section#contact .content a {
   color: #6b677e;
 }
 
-.portfolio-section#contact .social-links a {
+.portfolio-section#contact .content .social-links a {
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
@@ -423,12 +431,12 @@ main .portfolio-section:nth-child(odd) {
   transition: 0.3s;
 }
 
-.portfolio-section#contact .social-links a img {
+.portfolio-section#contact .content .social-links a img {
   width: 1.2em;
 }
 
-.portfolio-section#contact .social-links a:hover,
-.portfolio-section#contact .social-links a:active {
+.portfolio-section#contact .content .social-links a:hover,
+.portfolio-section#contact .content .social-links a:active {
   background-color: #6b677e;
 }
 
