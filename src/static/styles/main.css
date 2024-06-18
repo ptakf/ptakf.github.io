@@ -301,7 +301,7 @@ main .portfolio-section:nth-child(odd) {
   margin-bottom: 1.6em;
 }
 
-/* Portfolio Section - About Me */
+/* Portfolio Section - About */
 .portfolio-section#about p {
   font-size: 1.2em;
 }
@@ -387,9 +387,9 @@ main .portfolio-section:nth-child(odd) {
   font-size: 1.2rem;
 }
 
-/* Portfolio Section - My Projects */
+/* Portfolio Section - Projects */
 
-/* Portfolio Section - Contact Me */
+/* Portfolio Section - Contact */
 .portfolio-section#contact .container {
   display: flex;
   flex-wrap: wrap;
