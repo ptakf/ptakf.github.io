@@ -7,27 +7,6 @@ function insertStringAtPosition(text, string, position) {
   return text.slice(0, position) + string + text.slice(position);
 }
 
-function encodeTextOLD(text) {
-  // Pre-funk the text
-  let encodedText = "rockafeller";
-
-  // Go through the characters in reverse
-  for (let i = text.length - 1; i >= 0; i--) {
-    // Get char code and add extra obfuscation
-    charCode = text.charCodeAt(i) * 2 + 1;
-
-    // Convert the char code from decimal to hexadecimal
-    charCode16 = charCode.toString(16);
-
-    // Ensure the char code is four characters long
-    charId = "0".repeat(5 - charCode16.length) + charCode16;
-
-    encodedText += charId;
-  }
-
-  return encodedText;
-}
-
 function encodeText(text) {
   let encodedText = "";
 

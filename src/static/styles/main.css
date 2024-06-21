@@ -87,7 +87,7 @@ header {
     padding: 0.3em;
     cursor: pointer;
     background-color: #39364a;
-    border-radius: 3px;
+    border-radius: 4px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
 
@@ -208,7 +208,7 @@ nav .nav-list li {
 }
 
 nav .nav-list a {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: #d4d4d4;
   transition: 0.3s;
 }
@@ -218,7 +218,7 @@ nav .nav-list a:hover {
 }
 
 nav .nav-list a img {
-  width: 1em;
+  width: 1.1em;
   margin-right: 0.4em;
   vertical-align: text-top;
 }
@@ -245,12 +245,13 @@ main .portfolio-section:nth-child(odd) {
   height: 100vh;
   pointer-events: none;
   background: url("../assets/images/bg-hero.jpg") top center;
+  background-attachment: fixed;
   background-size: cover;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1190px) {
   #hero {
-    background-attachment: fixed;
+    background-attachment: local;
   }
 }
 
@@ -275,16 +276,26 @@ main .portfolio-section:nth-child(odd) {
   margin-bottom: 0.3em;
   font-size: 4.5em;
   font-weight: bold;
+  text-shadow: 0.015em 0 #000000, -0.015em 0 #000000, 0 0.015em #000000,
+    0 -0.015em #000000;
 }
 
 #hero h2 {
   font-size: 1.7em;
   font-weight: normal;
+  text-shadow: 0.015em 0 #000000, -0.015em 0 #000000, 0 0.015em #000000,
+    0 -0.015em #000000;
 }
 
 /* Portfolio Section */
 .portfolio-section {
-  padding: 2.5em 5%;
+  padding: 2.5em 7%;
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio-section {
+    padding: 2.5em 4%;
+  }
 }
 
 .portfolio-section h1 {
@@ -310,7 +321,7 @@ main .portfolio-section:nth-child(odd) {
 .portfolio-section#skills .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  row-gap: 1.6em;
+  gap: 1.6em;
 }
 
 @media screen and (max-width: 1199px) {
@@ -325,14 +336,30 @@ main .portfolio-section:nth-child(odd) {
 }
 
 .portfolio-section#skills .skill-category ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.4em;
+  column-gap: 1em;
+  row-gap: 0.4em;
   list-style: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio-section#skills .skill-category ul {
+    display: block;
+  }
 }
 
 .portfolio-section#skills .skill-category li {
   display: flex;
   align-items: center;
-  margin-bottom: 0.4em;
   font-size: 1.2em;
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio-section#skills .skill-category li {
+    margin-bottom: 0.4em;
+  }
 }
 
 .portfolio-section#skills .skill-category li img {
@@ -404,6 +431,16 @@ main .portfolio-section:nth-child(odd) {
   margin-bottom: 1.6em;
   column-gap: 5em;
   row-gap: 1.8em;
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio-section#contact .content {
+    display: block;
+  }
+
+  .portfolio-section#contact .content div {
+    margin-bottom: 1.6em;
+  }
 }
 
 .portfolio-section#contact .content h2 {
