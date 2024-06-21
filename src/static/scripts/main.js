@@ -1,4 +1,5 @@
 function getRandomInt(max = 99, min = 0) {
+  // Get a random integer in the [min, max] range
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
@@ -8,6 +9,7 @@ function insertStringAtPosition(text, string, position) {
 }
 
 function encodeText(text) {
+  // Encode the passed text using a professional in-house algorithmTM
   let encodedText = "";
 
   // Go through the characters in reverse
@@ -18,31 +20,69 @@ function encodeText(text) {
     // Convert the char code from decimal to hexadecimal
     charCode16 = charCode.toString(16);
 
-    // Ensure the char code is four characters long
+    // Ensure the char code is 5 characters long
     charId = charCode16.padStart(5, "0");
 
     encodedText += charId;
   }
 
-  // Funk the text
+  // Add garbage data
+  const characters = "01234567890abcdefghijklmnopqrstuvwxyz";
+
+  // Get garbage data
+  let garbageData = (
+    characters.charCodeAt(getRandomInt(characters.length - 1)) * 2 +
+    1
+  )
+    .toString(16) // Convert it to hexadecimal
+    .padStart(5, "0"); // Ensure it's 5 characters long
+
+  // Randomly select the garbage data position
+  let garbageDataPosition = getRandomInt(encodedText.length);
+
+  // Insert the garbage data into the text
   encodedText = insertStringAtPosition(
     encodedText,
-    "rockafeller",
-    getRandomInt(encodedText.length - 1)
+    garbageData,
+    garbageDataPosition
+  );
+
+  // Prepend the garbage data position to the text
+  encodedText = garbageDataPosition + "K" + encodedText;
+
+  // Silver-hammer the text
+  encodedText = insertStringAtPosition(
+    encodedText,
+    "maxwell",
+    getRandomInt(encodedText.length)
   );
 
   return encodedText;
 }
 
 function decodeText(text) {
+  // Decode text using a professional in-house algorithmTM
   let decodedText = "";
 
-  // De-funk the text
-  text = text.replaceAll("rockafeller", "");
+  // De-hammer the text
+  text = text.replaceAll("maxwell", "");
+
+  // Get garbage data position
+  let garbageDataPosition = text.match(/\d+K/)[0].replaceAll("K", "");
+
+  // Remove the position from encoded text
+  text = text.slice(garbageDataPosition.length + 1, text.length);
+
+  // Convert the position to integer
+  garbageDataPosition = parseInt(garbageDataPosition);
+
+  // Remove the garbage data
+  text =
+    text.slice(0, garbageDataPosition) + text.slice(garbageDataPosition + 5);
 
   // Go through the characters in reverse
   for (let i = text.length - 5; i >= 0; i -= 5) {
-    // Extract char code from the text
+    // Extract a char code from the text
     charId = text.slice(i, i + 5);
 
     // Convert the char code from hexadecimal do decimal
