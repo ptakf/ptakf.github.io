@@ -97,16 +97,16 @@ function decodeText(text) {
   return decodedText;
 }
 
-function joinDataParts(element) {
+function joinDataParts(element, pattern = "data-scrambled-part-") {
   // Join data-* parts of an element
   let data = "";
 
-  let currentPart = element.getAttribute("data-scrambled-part-1");
+  let currentPart = element.getAttribute(`${pattern}1`);
   let partId = 2;
   // Go through every part
   while (currentPart !== undefined && currentPart !== null) {
     data += currentPart;
-    currentPart = element.getAttribute(`data-scrambled-part-${partId}`);
+    currentPart = element.getAttribute(`${pattern}${partId}`);
 
     partId++;
   }
@@ -130,4 +130,13 @@ for (let element of document.getElementsByClassName("scrambled-email")) {
 
   element.textContent = decodedText;
   element.href = `mailto:${decodedText}`;
+}
+
+for (let element of document.getElementsByClassName("scrambled-file")) {
+  // Unscramble file
+  element.href = decodeText(joinDataParts(element, "data-scrambled-href-"));
+
+  element.download = decodeText(
+    joinDataParts(element, "data-scrambled-download-")
+  );
 }

@@ -455,6 +455,12 @@ main .portfolio-section:nth-child(odd) {
 
 .portfolio-section#contact .content a {
   color: #6b677e;
+  transition: 0.3s;
+}
+
+.portfolio-section#contact .content a:hover,
+.portfolio-section#contact .content a:active {
+  color: #000000;
 }
 
 .portfolio-section#contact .content .social-links a {
