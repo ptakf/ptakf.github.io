@@ -1,26 +1,4 @@
-body,
-div,
-dl,
-dt,
-dd,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-pre,
-form,
-fieldset,
-input,
-textarea,
-p,
-blockquote,
-th,
-td {
+* {
   padding: 0;
   margin: 0;
 }
@@ -156,7 +134,7 @@ header {
 /* Profile */
 header .profile > img {
   display: block;
-  width: 33%;
+  width: 40%;
   margin: 1.3em auto;
   border: 10px solid #39364a;
   border-radius: 100%;
@@ -261,6 +239,7 @@ main .portfolio-section:nth-child(odd) {
   z-index: 1;
   content: "";
   background-color: rgba(15, 15, 15, 0.3);
+  box-shadow: inset 0 -12vh 4vh -6vh #ffffff;
 }
 
 #hero .hero-container {
@@ -318,6 +297,10 @@ main .portfolio-section:nth-child(odd) {
 }
 
 /* Portfolio Section - Skills */
+.portfolio-section#skills {
+  position: relative;
+}
+
 .portfolio-section#skills .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -327,9 +310,57 @@ main .portfolio-section:nth-child(odd) {
 @media screen and (max-width: 1199px) {
   .portfolio-section#skills .container {
     grid-template-columns: repeat(1, 1fr);
+    max-height: 50vh;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
 }
 
+/* Show More/Less Toggle */
+.show-more-toggle,
+.show-more-button {
+  display: none;
+}
+
+@media screen and (max-width: 1199px) {
+  .show-more-button {
+    display: inline;
+  }
+}
+
+.show-more-button {
+  position: absolute;
+  bottom: 1em;
+  padding: 1em;
+  cursor: pointer;
+  background-color: #39364a;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.show-more-button::after {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #dad3ea;
+  content: "Show More";
+  transition: 0.3s;
+}
+
+.show-more-button:hover::after,
+.show-more-button:hover:active {
+  color: #e5e0f0;
+}
+
+.show-more-toggle:checked + .show-more-button::after {
+  content: "Show Less";
+}
+
+#skills-show-more-toggle:checked ~ .container {
+  padding-bottom: 3em;
+  max-height: 200vh;
+}
+
+/* Skill Lists */
 .portfolio-section#skills .skill-category h2 {
   margin-bottom: 0.8em;
   font-size: 1.6em;
