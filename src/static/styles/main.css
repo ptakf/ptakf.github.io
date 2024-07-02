@@ -312,7 +312,7 @@ main .portfolio-section:nth-child(odd) {
     grid-template-columns: repeat(1, 1fr);
     max-height: 50vh;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: max-height 0.3s ease, padding-bottom 0.15s ease;
   }
 }
 
