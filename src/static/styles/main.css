@@ -307,7 +307,7 @@ main .portfolio-section:nth-child(odd) {
   gap: 1.6em;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .portfolio-section#skills .container {
     grid-template-columns: repeat(1, 1fr);
     max-height: 50vh;
@@ -322,7 +322,7 @@ main .portfolio-section:nth-child(odd) {
   display: none;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .show-more-button {
     display: inline;
   }
@@ -375,7 +375,7 @@ main .portfolio-section:nth-child(odd) {
   list-style: none;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 767px) {
   .portfolio-section#skills .skill-category ul {
     display: block;
   }
