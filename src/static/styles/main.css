@@ -30,12 +30,12 @@ img {
 header {
   position: fixed;
   top: 0;
-  left: 0;
   bottom: 3em;
+  left: 0;
   z-index: 9997;
   width: 300px;
   overflow-y: auto;
-  background-color: #181628;
+  background-color: #040c20;
 }
 
 @media screen and (max-width: 1199px) {
@@ -64,7 +64,7 @@ header {
     height: 2.5em;
     padding: 0.3em;
     cursor: pointer;
-    background-color: #39364a;
+    background-color: #262d41;
     border-radius: 4px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   }
@@ -76,7 +76,7 @@ header {
     width: 2.5em;
     height: 0.2em;
     content: "";
-    background-color: #cfc7e2;
+    background-color: #c4cbe4;
     transition: all 0.3s ease;
   }
 
@@ -136,7 +136,7 @@ header .profile > img {
   display: block;
   width: 40%;
   margin: 1.3em auto;
-  border: 10px solid #39364a;
+  border: 10px solid #262d41;
   border-radius: 100%;
 }
 
@@ -161,7 +161,7 @@ header .profile .social-links a {
   height: 1em;
   padding: 0.5em;
   margin-right: 0.4em;
-  background-color: #39364a;
+  background-color: #262d41;
   border-radius: 100%;
   transition: 0.3s;
 }
@@ -172,7 +172,7 @@ header .profile .social-links a img {
 
 header .profile .social-links a:hover,
 header .profile .social-links a:active {
-  background-color: #6b677e;
+  background-color: #575d73;
 }
 
 /* Navigation */
@@ -288,7 +288,7 @@ main .portfolio-section:nth-child(odd) {
   height: 0.1em;
   margin-top: 0.6em;
   content: "";
-  background-color: #6b677e;
+  background-color: #575d73;
 }
 
 /* Portfolio Section - About */
@@ -301,14 +301,14 @@ main .portfolio-section:nth-child(odd) {
   position: relative;
 }
 
-.portfolio-section#skills .container {
+.portfolio-section#skills > .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.6em;
 }
 
 @media screen and (max-width: 767px) {
-  .portfolio-section#skills .container {
+  .portfolio-section#skills > .container {
     grid-template-columns: repeat(1, 1fr);
     max-height: 50vh;
     overflow: hidden;
@@ -333,7 +333,7 @@ main .portfolio-section:nth-child(odd) {
   bottom: 1em;
   padding: 1em;
   cursor: pointer;
-  background-color: #39364a;
+  background-color: #262d41;
   border-radius: 4px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
@@ -341,14 +341,14 @@ main .portfolio-section:nth-child(odd) {
 .show-more-button::after {
   font-size: 1.5em;
   font-weight: bold;
-  color: #dad3ea;
+  color: #c4cbe4;
   content: "Show More";
   transition: 0.3s;
 }
 
 .show-more-button:hover::after,
 .show-more-button:hover:active {
-  color: #e5e0f0;
+  color: #e5ebff;
 }
 
 .show-more-toggle:checked + .show-more-button::after {
@@ -384,6 +384,7 @@ main .portfolio-section:nth-child(odd) {
 .portfolio-section#skills .skill-category li {
   display: flex;
   align-items: center;
+  column-gap: 0.3em;
   font-size: 1.2em;
 }
 
@@ -395,7 +396,6 @@ main .portfolio-section:nth-child(odd) {
 
 .portfolio-section#skills .skill-category li img {
   width: 1.6em;
-  margin-right: 0.3em;
 }
 
 /* Portfolio Section - Resume */
@@ -432,7 +432,7 @@ main .portfolio-section:nth-child(odd) {
 
 .portfolio-section#resume .experience-list .description-list li {
   margin-bottom: 0.2em;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
 .portfolio-section#resume .education-list {
@@ -442,10 +442,103 @@ main .portfolio-section:nth-child(odd) {
 
 .portfolio-section#resume .education-list li {
   margin-bottom: 0.2em;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
 /* Portfolio Section - Projects */
+.portfolio-section#projects > .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.portfolio-section#projects .project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 0.5;
+  width: 30%;
+  padding: 0.8em 0.8em 0.6em;
+  background-color: #e5ebff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 1199px) {
+  .portfolio-section#projects .project {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .portfolio-section#projects .project {
+    width: 100%;
+  }
+}
+
+.portfolio-section#projects .project .title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3em;
+}
+
+.portfolio-section#projects .project .title h2 {
+  font-size: 2em;
+}
+
+.portfolio-section#projects .project .title .tags {
+  display: flex;
+  column-gap: 0.6em;
+}
+
+.portfolio-section#projects .project .title .tags img {
+  width: 1.8em;
+}
+
+.portfolio-section#projects .project p {
+  font-size: 1.2em;
+}
+
+.portfolio-section#projects .project p::before,
+.portfolio-section#projects .project p::after {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin: 0.8rem 0;
+  content: "";
+  background-color: #575d73;
+}
+
+.portfolio-section#projects .project p::after {
+  margin: 0.6rem 0;
+}
+
+.portfolio-section#projects .project .links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.portfolio-section#projects .project .links a {
+  display: flex;
+  align-items: center;
+  column-gap: 0.3em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #575d73;
+  transition: 0.3s;
+}
+
+.portfolio-section#projects .project a:hover,
+.portfolio-section#projects .project a:active {
+  color: #000000;
+}
+
+.portfolio-section#projects .project a img {
+  width: 1.6em;
+}
 
 /* Portfolio Section - Contact */
 .portfolio-section#contact .no-javascript-notice {
@@ -455,7 +548,7 @@ main .portfolio-section:nth-child(odd) {
   text-decoration: underline;
 }
 
-.portfolio-section#contact .content {
+.portfolio-section#contact > .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -464,61 +557,61 @@ main .portfolio-section:nth-child(odd) {
   row-gap: 1.8em;
 }
 
-@media screen and (max-width: 1199px) {
-  .portfolio-section#contact .content {
+@media screen and (max-width: 767px) {
+  .portfolio-section#contact > .container {
     display: block;
   }
 
-  .portfolio-section#contact .content div {
+  .portfolio-section#contact div {
     margin-bottom: 1.6em;
   }
 }
 
-.portfolio-section#contact .content h2 {
+.portfolio-section#contact h2 {
   margin-bottom: 0.6em;
   font-size: 1.6em;
 }
 
-.portfolio-section#contact .content p {
+.portfolio-section#contact p {
   font-size: 1.2em;
-  color: #6b677e;
+  color: #575d73;
 }
 
-.portfolio-section#contact .content a {
-  color: #6b677e;
+.portfolio-section#contact a {
+  color: #575d73;
   transition: 0.3s;
 }
 
-.portfolio-section#contact .content a:hover,
-.portfolio-section#contact .content a:active {
+.portfolio-section#contact a:hover,
+.portfolio-section#contact a:active {
   color: #000000;
 }
 
-.portfolio-section#contact .content .social-links a {
+.portfolio-section#contact .social-links a {
   display: inline-block;
   width: 1.2em;
   height: 1.2em;
   padding: 0.6em;
   margin-right: 0.6em;
-  background-color: #39364a;
+  background-color: #262d41;
   border-radius: 100%;
   transition: 0.3s;
 }
 
-.portfolio-section#contact .content .social-links a img {
+.portfolio-section#contact .social-links a img {
   width: 1.2em;
 }
 
-.portfolio-section#contact .content .social-links a:hover,
-.portfolio-section#contact .content .social-links a:active {
-  background-color: #6b677e;
+.portfolio-section#contact .social-links a:hover,
+.portfolio-section#contact .social-links a:active {
+  background-color: #575d73;
 }
 
 /* FOOTER */
 footer {
   position: fixed;
-  left: 0;
   bottom: 0;
+  left: 0;
   z-index: 9998;
   display: flex;
   align-items: center;
@@ -527,7 +620,7 @@ footer {
   height: 3em;
   font-size: 1em;
   color: #ffffff;
-  background-color: #181628;
+  background-color: #040c20;
 }
 
 @media screen and (max-width: 1199px) {
