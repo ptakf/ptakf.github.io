@@ -446,12 +446,70 @@ main .portfolio-section:nth-child(odd) {
 }
 
 /* Portfolio Section - Projects */
+.portfolio-section#projects {
+  position: relative;
+}
+
 .portfolio-section#projects > .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em;
+  gap: 1em;
 }
 
+/* @media screen and (max-width: 767px) {
+  .portfolio-section#projects > .container {
+    max-height: 80vh;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding-bottom 0.15s ease;
+  }
+} */
+
+/* Show More/Less Toggle */
+.show-more-toggle,
+.show-more-button {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .show-more-button {
+    display: inline;
+  }
+}
+
+.show-more-button {
+  position: absolute;
+  bottom: 1em;
+  padding: 1em;
+  cursor: pointer;
+  background-color: #262d41;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9996;
+}
+
+.show-more-button::after {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #c4cbe4;
+  content: "Show More";
+  transition: 0.3s;
+}
+
+.show-more-button:hover::after,
+.show-more-button:hover:active {
+  color: #e5ebff;
+}
+
+.show-more-toggle:checked + .show-more-button::after {
+  content: "Show Less";
+}
+
+#projects-show-more-toggle:checked ~ .container {
+  padding-bottom: 3.2em;
+  max-height: 240vh;
+}
+
+/* Project */
 .portfolio-section#projects .project {
   position: relative;
   display: flex;
