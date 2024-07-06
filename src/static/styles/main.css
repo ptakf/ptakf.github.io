@@ -30,19 +30,21 @@ img {
 header {
   position: fixed;
   top: 0;
-  bottom: 3em;
+  bottom: 0;
   left: 0;
   z-index: 9997;
   width: 300px;
   overflow-y: auto;
   background-color: #040c20;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 1199px) {
   header {
     left: -300px;
-    transition: left 0.3s ease;
     width: 300px;
+    box-shadow: none;
+    transition: left 0.3s ease;
   }
 }
 
@@ -151,23 +153,23 @@ header .profile > h1 a {
 }
 
 header .profile .social-links {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
   text-align: center;
 }
 
 header .profile .social-links a {
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  padding: 0.5em;
-  margin-right: 0.4em;
+  width: 1.2em;
+  height: 1.2em;
+  padding: 0.6em;
+  margin-right: 0.5em;
   background-color: #262d41;
   border-radius: 100%;
   transition: 0.3s;
 }
 
 header .profile .social-links a img {
-  width: 1em;
+  width: 1.2em;
 }
 
 header .profile .social-links a:hover,
@@ -177,22 +179,32 @@ header .profile .social-links a:active {
 
 /* Navigation */
 nav .nav-list {
-  padding-left: 2.5em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5em;
+  row-gap: 2em;
   list-style: none;
 }
 
 nav .nav-list li {
-  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  margin: 0 4em;
+  background-color: #262d41;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+nav .nav-list li:hover,
+nav .nav-list li:active {
+  background-color: #575d73;
 }
 
 nav .nav-list a {
   font-size: 1.3em;
-  color: #d4d4d4;
+  color: #ededed;
   transition: 0.3s;
-}
-
-nav .nav-list a:hover {
-  color: #ffffff;
 }
 
 nav .nav-list a img {
@@ -330,25 +342,26 @@ main .portfolio-section:nth-child(odd) {
 
 .show-more-button {
   position: absolute;
+  z-index: 9996;
   bottom: 1em;
   padding: 1em;
   cursor: pointer;
   background-color: #262d41;
   border-radius: 4px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
 
 .show-more-button::after {
   font-size: 1.5em;
   font-weight: bold;
-  color: #c4cbe4;
+  color: #ededed;
   content: "Show More";
-  transition: 0.3s;
 }
 
-.show-more-button:hover::after,
-.show-more-button:hover:active {
-  color: #e5ebff;
+.show-more-button:hover,
+.show-more-button:active {
+  background-color: #575d73;
 }
 
 .show-more-toggle:checked + .show-more-button::after {
@@ -466,45 +479,6 @@ main .portfolio-section:nth-child(odd) {
 } */
 
 /* Show More/Less Toggle */
-.show-more-toggle,
-.show-more-button {
-  display: none;
-}
-
-@media screen and (max-width: 767px) {
-  .show-more-button {
-    display: inline;
-  }
-}
-
-.show-more-button {
-  position: absolute;
-  bottom: 1em;
-  padding: 1em;
-  cursor: pointer;
-  background-color: #262d41;
-  border-radius: 4px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  z-index: 9996;
-}
-
-.show-more-button::after {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #c4cbe4;
-  content: "Show More";
-  transition: 0.3s;
-}
-
-.show-more-button:hover::after,
-.show-more-button:hover:active {
-  color: #e5ebff;
-}
-
-.show-more-toggle:checked + .show-more-button::after {
-  content: "Show Less";
-}
-
 #projects-show-more-toggle:checked ~ .container {
   padding-bottom: 3.2em;
   max-height: 240vh;
@@ -520,7 +494,7 @@ main .portfolio-section:nth-child(odd) {
   width: 30%;
   padding: 0.8em 0.8em 0.6em;
   background-color: #ffffff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
 }
 
@@ -557,22 +531,15 @@ main .portfolio-section:nth-child(odd) {
   width: 1.8em;
 }
 
-.portfolio-section#projects .project p {
-  font-size: 1.2em;
-}
-
-.portfolio-section#projects .project p::before,
-.portfolio-section#projects .project p::after {
-  display: block;
+.portfolio-section#projects .project .divider {
+  margin: 0.5em 0;
   width: 100%;
-  height: 3px;
-  margin: 0.8rem 0;
-  content: "";
+  height: 0.2em;
   background-color: #575d73;
 }
 
-.portfolio-section#projects .project p::after {
-  margin: 0.6rem 0;
+.portfolio-section#projects .project p {
+  font-size: 1.2em;
 }
 
 .portfolio-section#projects .project .links {
