@@ -193,7 +193,7 @@ nav .nav-list {
 nav .nav-list a {
   display: flex;
   justify-content: center;
-  padding: 1em;
+  padding: 0.8em;
   margin: 0 3em;
   font-size: 1.3em;
   color: #ededed;
@@ -493,14 +493,14 @@ main .portfolio-section:nth-child(odd) {
   gap: 1em;
 }
 
-/* For show more/less button */
-/* @media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .portfolio-section#projects > .container {
     max-height: 80vh;
+    gap: 0.5em;
     overflow: hidden;
     transition: max-height 0.3s ease, padding-bottom 0.15s ease;
   }
-} */
+}
 
 /* Show More/Less Toggle */
 #projects-show-more-toggle:checked ~ .container {
@@ -516,7 +516,7 @@ main .portfolio-section:nth-child(odd) {
   justify-content: space-between;
   flex-grow: 0.5;
   width: 30%;
-  padding: 0.8em 0.8em 0.6em;
+  padding: 0.8em;
   background-color: #ffffff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 6px;
@@ -531,6 +531,7 @@ main .portfolio-section:nth-child(odd) {
 @media screen and (max-width: 767px) {
   .portfolio-section#projects .project {
     width: 100%;
+    margin: 5px;
   }
 }
 
