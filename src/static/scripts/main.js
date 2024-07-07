@@ -15,13 +15,13 @@ function encodeText(text) {
   // Go through the characters in reverse
   for (let i = text.length - 1; i >= 0; i--) {
     // Get char code and add extra obfuscation
-    charCode = text.charCodeAt(i) * 2 + 1;
+    let charCode = text.charCodeAt(i) * 2 + 1;
 
     // Convert the char code from decimal to hexadecimal
-    charCode16 = charCode.toString(16);
+    let charCode16 = charCode.toString(16);
 
     // Ensure the char code is 5 characters long
-    charId = charCode16.padStart(5, "0");
+    let charId = charCode16.padStart(5, "0");
 
     encodedText += charId;
   }
@@ -83,13 +83,13 @@ function decodeText(text) {
   // Go through the characters in reverse
   for (let i = text.length - 5; i >= 0; i -= 5) {
     // Extract a char code from the text
-    charId = text.slice(i, i + 5);
+    let charId = text.slice(i, i + 5);
 
     // Convert the char code from hexadecimal do decimal
-    charCode16 = parseInt(charId, 16);
+    let charCode16 = parseInt(charId, 16);
 
     // Remove extra obfuscation
-    charCode = ((charCode16 - 1) / 2).toString();
+    let charCode = ((charCode16 - 1) / 2).toString();
 
     decodedText += String.fromCharCode(charCode);
   }
